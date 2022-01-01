@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>分时问候</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .box {
+            width: 400px;
+            height: 400px;
+            margin: 0 auto;
+        }
+        
+        .box img {
+            display: block;
+            width: 400px;
+            height: 400px;
+            background-size: 400px 400px;
+        }
+        
+        .box p {
+            font-size: 16px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box" class="box">
+        <img src="images/bg_1.jpg" alt="背景图片">
+        <p>上午好，辛苦了</p>
+    </div>
+
+    <script>
+        var hours = new Date().getHours();
+        var box = document.getElementById('box');
+        var img = box.getElementsByTagName('img')[0];
+        var p = box.getElementsByTagName('p')[0];
+
+        if (hours < 12) {
+            img.src = "images/bg_1.jpg";
+            img.alt = "背景图片";
+            p.innerHTML = "上午好，辛苦了";
+        } else {
+            img.src = "images/bg_2.jpg";
+            img.alt = "背景图片2";
+            p.innerHTML = "下午好，辛苦了";
+        }
+    </script>
+</body>
+
+</html>

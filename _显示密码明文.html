@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>显示密码明文</title>
+    <link rel="stylesheet" href="font/iconfont.css">
+    <style>
+        .box {
+            position: relative;
+            width: 300px;
+        }
+        
+        .box i {
+            position: absolute;
+            top: 4px;
+            right: 42px;
+            cursor: pointer;
+        }
+        
+        .box input {
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <label for="password">密码：</label>
+        <input type="password" name="password" id="psd" placeholder="请输入密码">
+        <i class="iconfont icon-icon-test1" id="active"></i>
+    </div>
+
+    <script>
+        var active = document.getElementById('active');
+        var psd = document.getElementById('psd');
+
+        active.onclick = function() {
+            if (psd.type === "password") {
+                this.className = 'iconfont icon-icon-test';
+                psd.type = "text";
+            } else {
+                this.className = 'iconfont icon-icon-test1';
+                psd.type = "password";
+            }
+        }
+    </script>
+</body>
+
+</html>

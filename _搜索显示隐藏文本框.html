@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>搜索显示隐藏文本框</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        div {
+            width: 500px;
+            height: 100px;
+            margin: 100px auto;
+        }
+        
+        input {
+            float: left;
+            width: 350px;
+            height: 22px;
+            border: 1px solid blue;
+            border-right: 0;
+            padding-left: 5px;
+            outline: none;
+            color: rgb(209, 209, 209);
+        }
+        
+        button {
+            float: left;
+            width: 50px;
+            height: 24px;
+            background-color: #fff;
+            border: 1px solid blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <input type="text" id="text" value="生活">
+        <button id="btn">搜索</button>
+    </div>
+
+    <script>
+        var text = document.getElementById('text'),
+            btn = document.getElementById('btn');
+
+        text.onfocus = function() {
+            if (this.value === '生活') {
+                this.value = '';
+            }
+
+            this.style.color = '#000';
+        }
+
+        text.onblur = function() {
+            if (this.value === '') {
+                this.value = "生活";
+            }
+
+            this.style.color = "#999";
+        }
+    </script>
+</body>
+
+</html>
