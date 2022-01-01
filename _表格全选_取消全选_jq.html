@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表格全选_取消全选</title>
+    <style>
+        .content {
+            width: 800px;
+            margin: 50px auto;
+        }
+        
+        th {
+            font-weight: 400;
+        }
+        
+        th,
+        td {
+            float: left;
+            width: 100px;
+            height: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <table>
+            <tr>
+                <th><input type="checkbox" id="active"></th>
+                <th>序号</th>
+                <th>姓名</th>
+                <th>语文</th>
+                <th>数学</th>
+                <th>英语</th>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>宋江</td>
+                <td>01</td>
+                <td>72</td>
+                <td>79</td>
+                <td>77</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>吴勇</td>
+                <td>02</td>
+                <td>90</td>
+                <td>82</td>
+                <td>60</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>华融</td>
+                <td>03</td>
+                <td>55</td>
+                <td>62</td>
+                <td>58</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>朱权</td>
+                <td>05</td>
+                <td>66</td>
+                <td>77</td>
+                <td>88</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>关胜</td>
+                <td>06</td>
+                <td>66</td>
+                <td>84</td>
+                <td>83</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>公孙胜</td>
+                <td>07</td>
+                <td>69</td>
+                <td>73</td>
+                <td>72</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>柴进</td>
+                <td>08</td>
+                <td>90</td>
+                <td>90</td>
+                <td>90</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>吴淞</td>
+                <td>09</td>
+                <td>88</td>
+                <td>88</td>
+                <td>88</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>林勇</td>
+                <td>10</td>
+                <td>77</td>
+                <td>77</td>
+                <td>77</td>
+            </tr>
+
+        </table>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <script>
+        // var active = document.getElementById('active');
+        // var list = document.getElementsByTagName('input');
+
+
+        // active.onclick = function() {
+        //     for (var i = 1; i < list.length; i++) {
+        //         list[i].checked = this.checked;
+        //     }
+        // } 
+
+        // for (var i = 1; i < list.length; i++) {
+        //     list[i].onclick = function() {
+        //         var bool = true;
+
+        //         for (i = 1; i < list.length; i++) {
+        //             if (!list[i].checked) {
+        //                 bool = false;
+        //                 break;
+        //             }
+        //         }
+
+        //         active.checked = bool;
+        //     }
+        // }
+
+        $(function(){
+            var bool = true;
+            $('#active').click(function(){
+                $("input").attr('checked', bool);
+                bool = !bool;
+            });
+        });
+    </script>
+</body>
+
+</html>
