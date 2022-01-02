@@ -143,9 +143,25 @@
 
         $(function(){
             var bool = true;
+            var $list = $("tr td input");
+
+            //全选反选
             $('#active').click(function(){
-                $("input").attr('checked', bool);
-                bool = !bool;
+                $("input").prop('checked',this.checked);
+            });
+
+            //子选项判断是否全选
+            $list.click(function(){
+                $list.each(function(){
+                    if(!this.checked) {
+                        bool = this.checked;
+                        return false;
+                    }
+
+                    bool = true;
+                });
+
+                $("#active").prop('checked', bool);
             });
         });
     </script>
