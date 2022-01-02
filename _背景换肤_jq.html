@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>背景换肤</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .box {
+            width: 900px;
+            height: 150px;
+            margin: 100px auto;
+        }
+        
+        ul {
+            height: 150px;
+            list-style: none;
+        }
+        
+        li {
+            float: left;
+            width: 150px;
+            height: 150px;
+        }
+        
+        li img {
+            display: block;
+            width: 150px;
+            height: 150px;
+        }
+        
+        body {
+            background-image: url(images/body_1.jpg);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box" class="box">
+        <ul>
+            <li><img src="images/body_1.jpg" alt=""></li>
+            <li><img src="images/body_2.jpg" alt=""></li>
+            <li><img src="images/body_3.jpg" alt=""></li>
+            <li><img src="images/body_4.jpg" alt=""></li>
+            <li><img src="images/body_5.jpg" alt=""></li>
+            <li><img src="images/body_6.jpg" alt=""></li>
+        </ul>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        // var imgs = document.getElementsByTagName('img');
+        // var body = document.body;
+
+        // for (var i = 0; i < imgs.length; i++) {
+        //     imgs[i].onclick = function() {
+        //         console.log(11);
+        //         body.style.backgroundImage = "url(" + this.src + ")";
+        //     }
+        // }
+
+        $(function(){
+            $("#box img").click(function(){
+                $('body').css({
+                    'background': 'url(' + $(this).attr('src') + ')'
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
