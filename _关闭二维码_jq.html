@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关闭二维码</title>
+    <style>
+        .box {
+            position: absolute;
+            top: 100px;
+            right: 100px;
+            width: 100px;
+            height: 100px;
+        }
+        
+        .box img {
+            display: block;
+            margin-top: -1px;
+            width: 100px;
+            height: 100px;
+            border: 1px solid #333;
+        }
+        
+        .box span {
+            position: absolute;
+            top: -15px;
+            right: -2px;
+            z-index: 1;
+            width: 14px;
+            height: 14px;
+            border: 1px solid #555;
+            border-bottom: 0;
+            background-color: #fff;
+            text-align: center;
+            line-height: 14px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box" id="box">
+        <img src="images/03.png" alt="">
+        <span id="active">X</span>
+    </div>
+
+    <script src="js/jquery.js"></script>
+    <script>
+        // var box = document.getElementById('box');
+        // var active = document.getElementById('active');
+
+        // active.onclick = function() {
+        //     box.style.display = "none";
+        // }
+
+        $('#box').click(function(){
+            $("body").css({
+                display: "none"
+            })
+        });
+    </script>
+</body>
+
+</html>
