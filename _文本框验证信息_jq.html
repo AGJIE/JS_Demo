@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="font/iconfont.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        form {
+            width: 500px;
+            height: 300px;
+            padding: 20px;
+            margin: 200px auto;
+            background-color: rgb(148, 147, 147);
+        }
+        
+        .box div {
+            float: left;
+        }
+        
+        .box div:nth-child(1) {
+            width: 230px;
+        }
+        
+        p {
+            display: inline-block;
+            font-size: 14px;
+            color: blue;
+        }
+        
+        i {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            line-height: 16px;
+            text-align: center;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form action="">
+        <div class="box">
+            <div>
+                <label for="user">用户：</label>
+                <input type="text" id="user">
+            </div>
+            <div>
+                <i class="iconfont icon-help" id="active"></i>
+                <p id="message">请输入6~16位的数字</p>
+            </div>
+        </div>
+    </form>
+
+    <script src="js/jquery-1.7.2/jquery.js"></script>
+    <script>
+        // var user = document.getElementById("user");
+        // var active = document.getElementById('active');
+        // var msg = document.getElementById('message');
+
+
+        // user.onfocus = function() {
+        //     if (this.value.length === 0) {
+        //         console.log(this.value.length);
+        //         active.className = "iconfont icon-help";
+        //         active.style.color = "blue";
+        //         msg.innerHTML = "请输入6~16位的数字";
+        //         msg.style.color = "blue";
+        //     }
+        // }
+
+        // user.onblur = function() {
+        //     if (this.value.length < 6 || this.value.length > 16) {
+        //         active.className = "iconfont icon-delete-filling";
+        //         active.style.color = "red";
+        //         msg.innerHTML = "输入不符合格式,请重新输入";
+        //         msg.style.color = "red";
+
+        //         this.value = '';
+        //     } else {
+        //         active.className = "iconfont icon-select-bold";
+        //         active.style.color = "green";
+        //         msg.innerHTML = "该用户名可用";
+        //         msg.style.color = "green";
+        //     }
+        // }
+
+        $(function(){
+            var $active = $('#active');
+            var $msg = $('#message');
+
+            $('#user').on({
+                focus: function(){
+                    if(this.value.length === 0) {
+                        $active.addClass('iconfont icon-help');
+                        $active.css('color', 'blue');
+                        $msg.html('请输入6~16位的数字');
+                        $msg.css('color', 'blue');
+                    }
+                },
+                blur: function(){
+                    console.log(1211);
+                    if(this.value.length < 6 || this.value.length > 16) {
+                    console.log(122211);
+
+                        $active.addClass('iconfont icon-delete-filling');
+                        $active.css('color', 'red');
+                        $msg.html('输入不符合格式,请重新输入');
+                        $msg.css('color', 'red');
+
+                        $(this).val('');
+                    } else {
+                        $active.addClass("iconfont icon-select-bold");
+                        $active.css('color', 'green');
+                        $msg.html('该用户名可用');
+                        $msg.css('color', 'green');
+                    }
+                }
+            });
+        }); 
+    </script>
+</body>
+
+</html>
