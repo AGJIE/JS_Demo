@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            left: 0;
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn">动起来</button>
+    <div></div>
+
+    <script>
+        var btn = document.getElementById('btn');
+        var div = document.getElementsByTagName('div')[0];
+
+        // btn.onclick = function() {
+        //     var time = setInterval(function() {
+        //         if (div.offsetLeft == 400) {
+        //             clearInterval(time);
+        //         }
+
+        //         div.style.left = div.offsetLeft + 10 + 'px';
+        //     }, 200);
+        // }
+
+        function setTime(el, time) {
+            clearInterval(el.time);
+
+            el.time = setInterval(function() {
+                if (el.offsetLeft == time) {
+                    clearInterval(e.time);
+                }
+
+                el.style.left = el.offsetLeft + 1 + 'px';
+            }, 30);
+        }
+
+        btn.onclick = function() {
+            setTime(div, 200);
+        }
+    </script>
+</body>
+
+</html>
