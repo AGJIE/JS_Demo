@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            left: 0;
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn1">移动</button>
+
+    <div id="div"></div>
+
+    <script>
+        var btn1 = document.getElementById('btn1'),
+            div = document.getElementById('div');
+
+        function setTime(el, target) {
+            clearInterval(el.time);
+
+            el.time = setInterval(function() {
+
+                if (el.offsetLeft >= target) {
+                    clearInterval(el.time);
+                } else {
+                    el.style.left = el.offsetLeft + 10 + 'px';
+                }
+
+            }, 15);
+        }
+
+        btn1.onclick = function() {
+            setTime(div, 200);
+        }
+    </script>
+</body>
+
+</html>
