@@ -18,23 +18,33 @@
 </head>
 
 <body>
-    <button id="btn1">移动</button>
+    <button id="btn1">前进</button>
+    <button id="btn2">后退</button>
 
     <div id="div"></div>
 
     <script>
         var btn1 = document.getElementById('btn1'),
+            btn2 = document.getElementById('btn2'),
             div = document.getElementById('div');
 
-        function setTime(el, target) {
+        function setTime(el, target, callback) {
             clearInterval(el.time);
 
             el.time = setInterval(function() {
+                var step = (target - el.offsetLeft) / 10;
 
-                if (el.offsetLeft >= target) {
+                step = step > 0 ? Math.ceil(step) : Math.floor(step);
+
+                console.log(step);
+                if (el.offsetLeft == target) {
                     clearInterval(el.time);
+
+                    if (callback) {
+                        callback();
+                    }
                 } else {
-                    el.style.left = el.offsetLeft + 10 + 'px';
+                    el.style.left = el.offsetLeft + step + 'px';
                 }
 
             }, 15);
@@ -42,6 +52,10 @@
 
         btn1.onclick = function() {
             setTime(div, 200);
+        }
+
+        btn2.onclick = function() {
+            setTime(div, 0);
         }
     </script>
 </body>
